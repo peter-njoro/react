@@ -1,0 +1,165 @@
+/* ===== Hero Section ===== */
+:root {
+  --primary: #f7c948;
+  --secondary: #4B8BBE;
+  --accent: #ffd166;
+  --text: #222;
+  --bg: #f8f9fd;
+  --card-bg: #fff;
+  --btn-primary: #f7c948;
+  --btn-secondary: #222;
+  --btn-radius: 8px;
+  --wave-yellow: #f7c948;
+  --wave-radius: 0 0 60px 60px;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.hero {
+  position: relative;
+  min-height: 480px;
+  background: none;
+  margin-bottom: 48px;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 400%;
+  height: 400%;
+  background: var(--wave-yellow);
+  z-index: -1;
+  clip-path: path("M100,0 Q130,60 100,120 Q70,180 100,240 Q130,300 100,360 Q70,420 100,480 Q170,480 200,360 Q230,240 200,120 Q170,0 100,0 Z");
+}
+.hero-bg-left {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44vw;
+  height: 496px;
+  background: var(--wave-yellow);
+  border-bottom-left-radius: 180px 120px;
+  border-top-left-radius: 120px 80px;
+  border-bottom-right-radius: 120px 80px;
+  z-index: -1;
+  clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+}
+.hero-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 64px 48px 0 0;
+  z-index: 2;
+}
+.hero-content {
+  /* kept minimal offsets on the container; per-request we will shift .hero-text instead */
+}
+
+/* Make sure the section is a positioning context */
+#hero { position: relative; }
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  text-align: left;
+  /* default: cancel px-4 (1rem) */
+  margin-left: calc(-1rem);
+  padding-left: 1rem; /* keep a little breathing room on tiny screens */
+}
+
+/* match Tailwind's sm:px-8 */
+@media (min-width: 640px) {
+  .hero-text {
+    margin-left: calc(-2rem); /* cancels sm:px-8 */
+    padding-left: 2rem;
+  }
+}
+
+/* match Tailwind's lg:px-16 */
+@media (min-width: 1024px) {
+  .hero-text {
+    margin-left: calc(-30rem); /* cancels lg:px-16 */
+    padding-left: 4rem;
+  }
+}
+.hero-role {
+  color: #f7c948;
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+.hero-name {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text);
+}
+.hero-desc {
+  margin: 24px 0 32px 0;
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  /* color: #9aa0a6; muted / disabled look */
+  opacity: 0.85;
+  font-weight: 400;
+}
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  padding: 0;
+}
+.hero-title {
+  font-family: Times New Roman, Times, serif;
+  margin: 0;
+}
+.hero-name {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 900;
+  color: var(--text);
+  display: inline-block;
+  line-height: 1;
+}
+
+/* ensure hero text aligns left inside the centered section */
+.hero-text {
+  align-self: flex-start;
+  text-align: left;
+}
+.btn {
+  padding: 12px 32px;
+  border-radius: var(--btn-radius);
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.btn-primary {
+  background: var(--btn-primary);
+  color: var(--btn-secondary);
+}
+.btn-primary:hover {
+  background: #ffd166;
+}
+.btn-secondary {
+  background: var(--btn-secondary);
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #444;
+}
+.hero-image {
+  height: 405px;
+  overflow: hidden;
+  background: transparent;
+  z-index: 2;
+}
+.slideshow-fade {
+  opacity: 0.2;
+}
