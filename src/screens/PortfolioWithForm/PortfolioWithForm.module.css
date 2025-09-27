@@ -80,7 +80,7 @@
 /* match Tailwind's lg:px-16 */
 @media (min-width: 1024px) {
   .hero-text {
-    margin-left: calc(-30rem); /* cancels lg:px-16 */
+    margin-left: calc(-34rem); /* cancels lg:px-16 */
     padding-left: 4rem;
   }
 }
