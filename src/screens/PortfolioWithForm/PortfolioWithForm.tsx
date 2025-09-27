@@ -305,7 +305,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                             className="flex flex-col md:flex-row w-full bg-white rounded-3xl overflow-hidden shadow-lg animate-fade-in"
                             style={{ "--animation-delay": `${800 + index * 200}ms` } as React.CSSProperties}
                         >
-                            <CardContent className="p-0 flex w-full h-full">
+                            <CardContent className="p-0 flex flex-col md:flex-row w-full h-full">
                                 {project.imagePosition === "left" ? (
                                     <>
                                         <img
@@ -361,7 +361,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                                                         className="rounded-3xl border border-solid border-[#25282b] hover:bg-brand-yellow hover:border-brand-yellow transition-colors"
                                                     >
                                                         <span className="[font-family:'Roboto',Helvetica] font-medium text-font-high-emphasis text-lg leading-[27px] whitespace-nowrap">
-                                                            View Project
+                                                            View All Projects
                                                         </span>
                                                     </Button>
                                                 </a>
@@ -418,7 +418,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                                                         className="rounded-3xl border border-solid border-[#25282b] hover:bg-brand-yellow hover:border-brand-yellow transition-colors"
                                                     >
                                                         <span className="[font-family:'Roboto',Helvetica] font-medium text-font-high-emphasis text-lg leading-[27px] whitespace-nowrap">
-                                                            View Project
+                                                            View All Projects
                                                         </span>
                                                     </Button>
                                                 </a>
