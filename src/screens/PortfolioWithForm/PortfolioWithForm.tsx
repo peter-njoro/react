@@ -20,7 +20,7 @@ const projects = [
         title: "Facetrack-Lite",
         description:
             "An app that recognizes students, logs unidentified faces, and manages attendance sessions. Dockerized for easy deployment.",
-        image: "public/assets/images/facetrack-lite.webp",
+    image: "assets/images/facetrack-lite.webp",
         // image: "https://c.animaapp.com/mftog3eawa0jbJ/img/pexels-elly-fairytale-3823207-1.png",
         imagePosition: "right",
     },
@@ -29,7 +29,7 @@ const projects = [
         description:
             "Role-based access, notifications, and real-time search. Optimized queries for faster task management.",
         // image: "https://c.animaapp.com/mftog3eawa0jbJ/img/rectangle-7.png",
-        image: "public/assets/images/management.webp",
+    image: "assets/images/management.webp",
         imagePosition: "left",
     },
     {
@@ -37,7 +37,7 @@ const projects = [
         description:
             "REST APIs, AJAX search, and role-based access experiments. More on my GitHub.",
         // image: "https://c.animaapp.com/mftog3eawa0jbJ/img/rectangle-7-1.png",
-        image: "public/assets/images/other-projects.webp",
+    image: "assets/images/other-projects.webp",
         imagePosition: "right",
     },
 ];
@@ -53,7 +53,7 @@ const experiences = [
         titlePosition: "top-[3040px] left-[459px]",
         descPosition: "top-[3152px] left-[465px]",
         iconPosition: "top-[3190px] left-[273px]",
-        iconSrc: "public/assets/svg/rectangle-21.svg",
+    iconSrc: "assets/svg/rectangle-21.svg",
     },
     {
         title: "SafetyPlus Consulting – Intern 2025",
@@ -64,7 +64,7 @@ const experiences = [
         titlePosition: "top-[3407px] left-[465px]",
         descPosition: "top-[3532px] left-[465px]",
         iconPosition: "top-[3816px] left-[328px]",
-        iconSrc: "public/assets/svg/rectangle-21.svg",
+    iconSrc: "assets/svg/rectangle-21.svg",
     },
     {
         title: "Other Personal Projects as showcased on my github profile",
@@ -74,7 +74,7 @@ const experiences = [
         titlePosition: "top-[3797px] left-[465px]",
         descPosition: "",
         iconPosition: "top-[3635px] left-[812px]",
-        iconSrc: "public/assets/svg/rectangle-21.svg",
+    iconSrc: "assets/svg/rectangle-21.svg",
     },
 ];
 
@@ -82,31 +82,31 @@ const experiences = [
 const skills = [
     {
         name: "Python",
-        icon: "public/assets/svg/logo_python_icon.svg",
+    icon: "assets/svg/logo_python_icon.svg",
         position: "top-[4320px] left-[371px]",
         labelPosition: "top-[4519px] left-[439px]",
     },
     {
         name: "django",
-        icon: "public/assets/svg/django_fill_icon.svg",
+    icon: "assets/svg/django_fill_icon.svg",
         position: "top-[4320px] left-[616px]",
         labelPosition: "top-[4523px] left-[704px]",
     },
     {
         name: "Postgres",
-        icon: "public/assets/svg/devicon-postgresql.svg",
+    icon: "assets/svg/devicon-postgresql.svg",
         position: "top-[4320px] left-[913px]",
         labelPosition: "top-[4519px] left-[999px]",
     },
     {
         name: "Git",
-        icon: "public/assets/svg/git_social media_icon.svg",
+    icon: "assets/svg/git_social media_icon.svg",
         position: "top-[4586px] left-[371px]",
         labelPosition: "top-[4783px] left-[442px]",
     },
     {
         name: "Data Analysis",
-        icon: "public/assets/svg/data_analysis.svg",
+    icon: "assets/svg/data_analysis.svg",
         position: "top-[4586px] left-[616px]",
         labelPosition: "top-[4797px] left-[673px]",
     },
@@ -115,15 +115,15 @@ const skills = [
 // Data for contact icons
 const contactIcons = [
     {
-        icon: "public/assets/svg/email_gmail_mail_logo_social_icon.svg",
+    icon: "assets/svg/email_gmail_mail_logo_social_icon.svg",
         position: "top-[5262px] left-[267px]",
     },
     {
-        icon: "public/assets/svg/code_repository_github_repository_resource_icon.svg",
+    icon: "assets/svg/code_repository_github_repository_resource_icon.svg",
         position: "top-[5262px] left-[578px]",
     },
     {
-        icon: "public/assets/svg/icons8-linkedin.svg",
+    icon: "assets/svg/icons8-linkedin.svg",
         position: "top-[5260px] left-[889px]",
     },
 ];
@@ -167,7 +167,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                 <img
                     className="hidden lg:block object-cover mb-8 absolute top-0 right-0 max-w-[720px] w-full h-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:0ms]"
                     alt="Hero Background"
-                    src="public/assets/svg/image.svg"
+                    src="assets/svg/image.svg"
                 />
                 {/* Intro illustration recreated with responsive HTML/SVG for better scaling */}
                 <div className={styles["hero-text"]}>
@@ -183,7 +183,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                         <a href="#projects" className={`${styles.btn} ${styles["btn-primary"]} smooth-scroll`}>
                             Projects
                         </a>
-                        <a href="public/assets/files/Peter_Chege-Resume.pdf" className={`${styles.btn} ${styles["btn-secondary"]}`} target="_blank" rel="noopener noreferrer" download>
+                        <a href="assets/files/Peter_Chege-Resume.pdf" className={`${styles.btn} ${styles["btn-secondary"]}`} target="_blank" rel="noopener noreferrer" download>
                             Resume
                         </a>
                         {/* <a href="https://linkedin.com/in/chege-peter" className={`${styles.btn} ${styles["btn-secondary"]}`} target="_blank" rel="noopener noreferrer">
@@ -532,7 +532,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                 <img
                     className="w-full h-auto"
                     alt="Vector"
-                    src="public/assets/svg/vector.svg"
+                    src="assets/svg/vector.svg"
                 />
             </div>
         </div>
