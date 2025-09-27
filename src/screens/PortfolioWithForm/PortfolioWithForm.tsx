@@ -252,11 +252,11 @@ export const PortfolioWithForm = (): React.ReactElement => {
                                 {project.imagePosition === "left" ? (
                                     <>
                                         <img
-                                            className="w-full md:w-1/2 h-64 md:h-[524px] object-cover"
+                                            className="w-full md:w-1/2 h-64 md:h-[524px] object-cover order-first"
                                             alt="Project"
                                             src={project.image}
                                         />
-                                        <div className="w-full md:w-1/2 flex flex-col justify-center p-8">
+                                        <div className="w-full md:w-1/2 flex flex-col justify-center p-8 order-last">
                                             <h3 className="[font-family:'Playfair_Display',Helvetica] font-bold text-font-high-emphasis text-2xl md:text-[40px] leading-tight mb-4">
                                                 {project.title}
                                             </h3>
@@ -313,7 +313,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                                     </>
                                 ) : (
                                     <>
-                                        <div className="w-full md:w-1/2 flex flex-col justify-center p-8">
+                                        <div className="w-full md:w-1/2 flex flex-col justify-center p-8 order-last md:order-first">
                                             <h3 className="[font-family:'Playfair_Display',Helvetica] font-bold text-font-high-emphasis text-2xl md:text-[40px] leading-tight mb-4">
                                                 {project.title}
                                             </h3>
@@ -368,7 +368,7 @@ export const PortfolioWithForm = (): React.ReactElement => {
                                             ) : null}
                                         </div>
                                         <img
-                                            className="w-full md:w-1/2 h-64 md:h-[524px] object-cover"
+                                            className="w-full md:w-1/2 h-64 md:h-[524px] object-cover order-first md:order-last"
                                             alt="Project"
                                             src={project.image}
                                         />
