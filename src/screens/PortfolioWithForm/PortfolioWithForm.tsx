@@ -139,16 +139,35 @@ const navItems = [
 
 export const PortfolioWithForm = (): React.ReactElement => {
     const [aboutExpanded, setAboutExpanded] = React.useState(false);
+    const [menuOpen, setMenuOpen] = React.useState(false);
     const aboutWords = about[0].description.split(' ');
     const aboutPreview = aboutWords.slice(0, 20).join(' ') + (aboutWords.length > 20 ? '...' : '');
+
+    React.useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setMenuOpen(false);
+        };
+        const onResize = () => {
+            // close mobile menu when switching to desktop
+            if (window.innerWidth >= 768) setMenuOpen(false);
+        };
+        window.addEventListener('keydown', onKey);
+        window.addEventListener('resize', onResize);
+        return () => {
+            window.removeEventListener('keydown', onKey);
+            window.removeEventListener('resize', onResize);
+        };
+    }, []);
     return (
         <div className="bg-bg-gray min-h-screen w-full flex flex-col items-center" data-model-id="1:62">
             {/* Header */}
-            <header className="w-full h-16 flex justify-between items-center px-4 sm:px-8 lg:px-16 bg-transparent shadow-sm sticky top-0 z-10">
-                <div className="[font-family:'Comfortaa',Helvetica] font-bold text-font-high-emphasis text-lg whitespace-nowrap">
+            <header className="w-full h-16 flex justify-between items-center px-4 sm:px-8 lg:px-16 bg-transparent shadow-sm sticky top-0 z-10 relative">
+                <div className="font-bold text-font-high-emphasis text-lg whitespace-nowrap">
                     Peter Chege
                 </div>
-                <nav className="flex gap-12">
+
+                {/* Desktop nav */}
+                <nav className="hidden md:flex gap-12">
                     {navItems.map((item) => (
                         <a
                             key={item.label}
@@ -159,6 +178,44 @@ export const PortfolioWithForm = (): React.ReactElement => {
                         </a>
                     ))}
                 </nav>
+
+                {/* Mobile menu toggle */}
+                <div className="md:hidden">
+                    <button
+                        aria-controls="mobile-menu"
+                        aria-expanded={menuOpen}
+                        onClick={() => setMenuOpen((s) => !s)}
+                        className="p-2 rounded-md inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    >
+                        {menuOpen ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+
+                {/* Mobile menu panel */}
+                {menuOpen && (
+                    <div id="mobile-menu" className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-md z-20">
+                        <div className="flex flex-col p-4 gap-2">
+                            {navItems.map((item) => (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="block px-3 py-2 rounded-md font-body-18px text-font-high-emphasis hover:bg-gray-50 transition-colors"
+                                >
+                                    {item.label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </header>
 
             {/* Hero Section */}
