@@ -11,7 +11,7 @@ const about = [
         description:
             "Peter Njoroge is an aspiring data scientist with a strong foundation in computer science and a passion for solving real-world problems using data. Currently pursuing his bachelor's degree in Computer Science, Peter is building a personal brand around leveraging machine learning and analytics to address challenges in Africa, particularly in natural resource management and sustainability. His long-term goal is to become a leading data science professional who contributes to both industry innovation and impactful projects that improve livelihoods. Peter has already developed a facial recognition attendance system, FaceTrack Lite, as a demonstration of his skills in computer vision and artificial intelligence. He has also participated in collaborative projects through ALX, where he explored applying data science to global challenges such as deforestation and cultural preservation. These experiences highlight his ability to merge technical knowledge with social impact, while working effectively in diverse teams. Driven, adaptable, and motivated by curiosity, Peter continues to grow his expertise in data science while aspiring to create solutions that empower communities and advance Africa's role in the global digital economy.",
         video:
-            "https://drive.google.com/file/d/1XKoh7LC0Hjbozc50UG_Q5cuAmZPznAB8/view?usp=drive_link",
+            "https://player.cloudinary.com/embed/?cloud_name=dmkpfe2zx&public_id=pitch-video-edited_ngo8zi&profile=cld-default",
     },
 ];
 // Data for projects
@@ -20,7 +20,7 @@ const projects = [
         title: "Facetrack-Lite",
         description:
             "An app that recognizes students, logs unidentified faces, and manages attendance sessions. Dockerized for easy deployment.",
-    image: "assets/images/facetrack-lite.webp",
+        image: "assets/images/facetrack-lite.webp",
         // image: "https://c.animaapp.com/mftog3eawa0jbJ/img/pexels-elly-fairytale-3823207-1.png",
         imagePosition: "right",
     },
@@ -29,7 +29,7 @@ const projects = [
         description:
             "Role-based access, notifications, and real-time search. Optimized queries for faster task management.",
         // image: "https://c.animaapp.com/mftog3eawa0jbJ/img/rectangle-7.png",
-    image: "assets/images/management.webp",
+        image: "assets/images/management.webp",
         imagePosition: "left",
     },
     {
@@ -37,7 +37,7 @@ const projects = [
         description:
             "REST APIs, AJAX search, and role-based access experiments. More on my GitHub.",
         // image: "https://c.animaapp.com/mftog3eawa0jbJ/img/rectangle-7-1.png",
-    image: "assets/images/other-projects.webp",
+        image: "assets/images/other-projects.webp",
         imagePosition: "right",
     },
 ];
@@ -53,7 +53,7 @@ const experiences = [
         titlePosition: "top-[3040px] left-[459px]",
         descPosition: "top-[3152px] left-[465px]",
         iconPosition: "top-[3190px] left-[273px]",
-    iconSrc: "assets/svg/rectangle-21.svg",
+        iconSrc: "assets/svg/rectangle-21.svg",
     },
     {
         title: "SafetyPlus Consulting – Intern 2025",
@@ -64,7 +64,7 @@ const experiences = [
         titlePosition: "top-[3407px] left-[465px]",
         descPosition: "top-[3532px] left-[465px]",
         iconPosition: "top-[3816px] left-[328px]",
-    iconSrc: "assets/svg/rectangle-21.svg",
+        iconSrc: "assets/svg/rectangle-21.svg",
     },
     {
         title: "Other Personal Projects as showcased on my github profile",
@@ -74,7 +74,7 @@ const experiences = [
         titlePosition: "top-[3797px] left-[465px]",
         descPosition: "",
         iconPosition: "top-[3635px] left-[812px]",
-    iconSrc: "assets/svg/rectangle-21.svg",
+        iconSrc: "assets/svg/rectangle-21.svg",
     },
 ];
 
@@ -82,31 +82,31 @@ const experiences = [
 const skills = [
     {
         name: "Python",
-    icon: "assets/svg/logo_python_icon.svg",
+        icon: "assets/svg/logo_python_icon.svg",
         position: "top-[4320px] left-[371px]",
         labelPosition: "top-[4519px] left-[439px]",
     },
     {
         name: "django",
-    icon: "assets/svg/django_fill_icon.svg",
+        icon: "assets/svg/django_fill_icon.svg",
         position: "top-[4320px] left-[616px]",
         labelPosition: "top-[4523px] left-[704px]",
     },
     {
         name: "Postgres",
-    icon: "assets/svg/devicon-postgresql.svg",
+        icon: "assets/svg/devicon-postgresql.svg",
         position: "top-[4320px] left-[913px]",
         labelPosition: "top-[4519px] left-[999px]",
     },
     {
         name: "Git",
-    icon: "assets/svg/git_social media_icon.svg",
+        icon: "assets/svg/git_social media_icon.svg",
         position: "top-[4586px] left-[371px]",
         labelPosition: "top-[4783px] left-[442px]",
     },
     {
         name: "Data Analysis",
-    icon: "assets/svg/data_analysis.svg",
+        icon: "assets/svg/data_analysis.svg",
         position: "top-[4586px] left-[616px]",
         labelPosition: "top-[4797px] left-[673px]",
     },
@@ -115,15 +115,15 @@ const skills = [
 // Data for contact icons
 const contactIcons = [
     {
-    icon: "assets/svg/email_gmail_mail_logo_social_icon.svg",
+        icon: "assets/svg/email_gmail_mail_logo_social_icon.svg",
         position: "top-[5262px] left-[267px]",
     },
     {
-    icon: "assets/svg/code_repository_github_repository_resource_icon.svg",
+        icon: "assets/svg/code_repository_github_repository_resource_icon.svg",
         position: "top-[5262px] left-[578px]",
     },
     {
-    icon: "assets/svg/icons8-linkedin.svg",
+        icon: "assets/svg/icons8-linkedin.svg",
         position: "top-[5260px] left-[889px]",
     },
 ];
@@ -280,9 +280,11 @@ export const PortfolioWithForm = (): React.ReactElement => {
                                     className="w-full h-48 md:h-64 rounded-2xl"
                                     src={about[0].video}
                                     title="About Me Video"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    width="640"
+                                    height="360"
+                                    allow="accelerometer; autoplay; clipboard-write encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
+                                    frameBorder="0"
                                 ></iframe>
                             </div>
                         </CardContent>
