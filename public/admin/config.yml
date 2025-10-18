@@ -16,3 +16,5 @@ collections:
       - { name: "date", label: "Date", widget: "datetime" }
       - { name: "description", label: "Description" }
       - { name: "body", label: "Body", widget: "markdown" }
+
+
