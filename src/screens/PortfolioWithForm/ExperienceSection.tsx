@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { experiences } from "./data";
+import { experiences } from "../../data/data";
 
 export default function ExperienceSection() {
     return (

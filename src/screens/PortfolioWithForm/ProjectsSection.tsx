@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
-import { projects } from "./data";
+import { projects } from "../../data/data";
 
 export default function ProjectsSection() {
     return (

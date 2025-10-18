@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { skills } from "./data";
+import { skills } from "../../data/data";
 
 export default function SkillsSection() {
     return (

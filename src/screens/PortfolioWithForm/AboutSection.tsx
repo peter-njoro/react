@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { about } from "./data";
+import { about } from "../../data/data";
 
 export default function AboutSection() {
     const [aboutExpanded, setAboutExpanded] = React.useState(false);

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { contactIcons } from "./data";
+import { contactIcons } from "../../data/data";
 
 export default function ContactSection() {
     return (

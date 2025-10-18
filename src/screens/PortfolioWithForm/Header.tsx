@@ -1,5 +1,5 @@
 import * as React from "react";
-import { navItems } from "./data";
+import { navItems } from "../../data/data";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = React.useState(false);
