@@ -1,3 +1,5 @@
+import { lazy } from "react";
+
 export const about = [
     {
         title: "About Me",
@@ -298,5 +300,11 @@ export const navItems = [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Contacts", href: "#contacts" },
-    { label: "Blog", href: "/blog"}
+    { label: "Blog", href: "/blog"},
+    { label: "Case Studies", href: "#case-studies" },
+    { label: "Achievements", href: "#achievements" },
+    { label: "Resume", href: "assets/files/Peter_Chege-Resume.pdf" }, 
+    { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
+    { label: "Hire Me", href: "#contact" },
 ];
