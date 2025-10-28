@@ -71,6 +71,16 @@
   animation: var(--animate-spin);
 }
 
+h2 {
+  font-weight: bold !important;
+  font-size: 36px;
+}
+
+/* Or if you want to use numeric font weights */
+/* h2 {
+  font-weight: 700 !important;
+} */
+
 @keyframes spin {
   to {
     transform: rotate(1turn);
