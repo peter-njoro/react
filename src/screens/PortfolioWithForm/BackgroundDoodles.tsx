@@ -1,12 +1,22 @@
+import * as React from "react";
+
 const doodleSvgs = [
   // Simple circle
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="circle"><circle cx="20" cy="20" r="18" stroke="#f7c948" strokeWidth="4" /></svg>,
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="circle">
+    <circle cx="20" cy="20" r="18" stroke="#f7c948" strokeWidth="4" />
+  </svg>,
   // Zigzag
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="zigzag"><polyline points="5,35 15,5 25,35 35,5" stroke="#f7c948" strokeWidth="3" fill="none" /></svg>,
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="zigzag">
+    <polyline points="5,35 15,5 25,35 35,5" stroke="#f7c948" strokeWidth="3" fill="none" />
+  </svg>,
   // Star
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="star"><polygon points="20,5 25,35 5,15 35,15 15,35" stroke="#f7c948" strokeWidth="2" fill="none" /></svg>,
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="star">
+    <polygon points="20,5 25,35 5,15 35,15 15,35" stroke="#f7c948" strokeWidth="2" fill="none" />
+  </svg>,
   // Squiggle
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="squiggle"><path d="M5 20 Q15 5 25 20 T35 20" stroke="#f7c948" strokeWidth="3" fill="none" /></svg>,
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="squiggle">
+    <path d="M5 20 Q15 5 25 20 T35 20" stroke="#f7c948" strokeWidth="3" fill="none" />
+  </svg>,
   // Cat face
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" key="cat">
     <ellipse cx="20" cy="24" rx="12" ry="10" stroke="#f7c948" strokeWidth="2.5" fill="none" />
@@ -45,16 +55,21 @@ function getRandomInt(min: number, max: number) {
 }
 
 export default function BackgroundDoodles() {
-  // Generate random positions for doodles
-  const doodles = Array.from({ length: 16 }).map((_, i) => {
-    const left = getRandomInt(0, 90); // vw
-    const top = getRandomInt(0, 90); // vh
+  // Generate random positions for doodles with more variety
+  const doodles = Array.from({ length: 20 }).map((_, i) => {
+    const left = getRandomInt(0, 95); // vw
+    const top = getRandomInt(0, 95); // vh
     const svg = doodleSvgs[getRandomInt(0, doodleSvgs.length - 1)];
     const rotate = getRandomInt(0, 360);
-    const opacity = Math.random() * 0.3 + 0.2;
+    const opacity = Math.random() * 0.25 + 0.15;
+    const scale = Math.random() * 0.5 + 0.8;
+    const animationDelay = Math.random() * 20;
+    const animationDuration = 15 + Math.random() * 10;
+    
     return (
       <div
         key={i}
+        className="animate-float"
         style={{
           position: "fixed",
           left: `${left}vw`,
@@ -62,12 +77,35 @@ export default function BackgroundDoodles() {
           zIndex: 0,
           pointerEvents: "none",
           opacity,
-          transform: `rotate(${rotate}deg)`,
+          transform: `rotate(${rotate}deg) scale(${scale})`,
+          animationDelay: `${animationDelay}s`,
+          animationDuration: `${animationDuration}s`,
         }}
       >
         {svg}
       </div>
     );
   });
-  return <>{doodles}</>;
+
+  return (
+    <>
+      {doodles}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          33% {
+            transform: translateY(-20px) rotate(120deg);
+          }
+          66% {
+            transform: translateY(10px) rotate(240deg);
+          }
+        }
+        .animate-float {
+          animation: float ease-in-out infinite;
+        }
+      `}</style>
+    </>
+  );
 }
