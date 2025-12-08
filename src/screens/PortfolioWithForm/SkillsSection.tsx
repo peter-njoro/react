@@ -3,7 +3,7 @@ import { useState, useCallback } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { skillTree } from "../../data/data";
 import { HorizontalSkillTree } from "../../components/skills/HorizontalSkillTree";
-import { ChevronsRight, ChevronsLeft, Grid, Layers } from "lucide-react";
+import { ChevronsRight, ChevronsLeft, Grid, Layers, ExternalLink, Plus } from "lucide-react";
 import { cn } from "../../lib/utils";
 
 export default function SkillsSection() {
