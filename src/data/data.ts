@@ -54,29 +54,6 @@ export const experiences = [
     },
 ];
 
-export const skills = [
-    {
-        name: "Python",
-        icon: "assets/svg/logo_python_icon.svg",
-    },
-    {
-        name: "django",
-        icon: "assets/svg/django_fill_icon.svg",
-    },
-    {
-        name: "Postgres",
-        icon: "assets/svg/devicon-postgresql.svg",
-    },
-    {
-        name: "Git",
-        icon: "assets/svg/git_social media_icon.svg",
-    },
-    {
-        name: "Data Analysis",
-        icon: "assets/svg/data_analysis.svg",
-    },
-];
-
 export const contactIcons = [
     {
         icon: "assets/svg/email_gmail_mail_logo_social_icon.svg",
@@ -307,4 +284,302 @@ export const navItems = [
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Hire Me", href: "#contact" },
+];
+
+
+// data.ts - Updated skills section with hierarchy
+export interface SkillNode {
+  id: string;
+  name: string;
+  icon: string;
+  description?: string;
+  isCategory?: boolean; // True for parent/category nodes
+  children?: SkillNode[]; // Nested children
+  link?: string; // Optional documentation or project link
+}
+
+export const skillTree: SkillNode[] = [
+  {
+    id: "programming-languages",
+    name: "Programming Languages",
+    icon: "assets/svg/code_icon.svg",
+    description: "Core programming languages and their ecosystems",
+    isCategory: true,
+    children: [
+      {
+        id: "python",
+        name: "Python",
+        icon: "assets/svg/logo_python_icon.svg",
+        description: "Primary language for web development, data science, and automation",
+        children: [
+          {
+            id: "django",
+            name: "Django",
+            icon: "assets/svg/django_fill_icon.svg",
+            description: "Full-featured web framework for rapid development",
+            link: "https://docs.djangoproject.com"
+          },
+          {
+            id: "fastapi",
+            name: "FastAPI",
+            icon: "assets/svg/fastapi_icon.svg",
+            description: "Modern, fast web framework for building APIs",
+            link: "https://fastapi.tiangolo.com"
+          },
+          {
+            id: "numpy",
+            name: "NumPy",
+            icon: "assets/svg/numpy_icon.svg",
+            description: "Fundamental package for scientific computing",
+            link: "https://numpy.org"
+          },
+          {
+            id: "pandas",
+            name: "Pandas",
+            icon: "assets/svg/pandas_icon.svg",
+            description: "Data analysis and manipulation library",
+            link: "https://pandas.pydata.org"
+          },
+          {
+            id: "scikit-learn",
+            name: "Scikit-learn",
+            icon: "assets/svg/sklearn_icon.svg",
+            description: "Machine learning library for Python",
+            link: "https://scikit-learn.org"
+          },
+          {
+            id: "opencv",
+            name: "OpenCV",
+            icon: "assets/svg/opencv_icon.svg",
+            description: "Computer vision and image processing library",
+            link: "https://opencv.org"
+          }
+        ]
+      },
+      {
+        id: "javascript",
+        name: "JavaScript",
+        icon: "assets/svg/javascript_icon.svg",
+        description: "Client-side scripting and interactive web development",
+        children: [
+          {
+            id: "react",
+            name: "React",
+            icon: "assets/svg/react_icon.svg",
+            description: "JavaScript library for building user interfaces",
+            link: "https://reactjs.org"
+          },
+          {
+            id: "typescript",
+            name: "TypeScript",
+            icon: "assets/svg/typescript_icon.svg",
+            description: "Typed superset of JavaScript",
+            link: "https://www.typescriptlang.org"
+          }
+        ]
+      },
+      {
+        id: "sql",
+        name: "SQL",
+        icon: "assets/svg/sql_icon.svg",
+        description: "Structured Query Language for database management"
+      },
+      {
+        id: "bash",
+        name: "Bash/Shell",
+        icon: "assets/svg/terminal_icon.svg",
+        description: "Command-line interface and shell scripting"
+      }
+    ]
+  },
+  {
+    id: "databases",
+    name: "Databases",
+    icon: "assets/svg/database_icon.svg",
+    description: "Database systems and data storage solutions",
+    isCategory: true,
+    children: [
+      {
+        id: "postgresql",
+        name: "PostgreSQL",
+        icon: "assets/svg/devicon-postgresql.svg",
+        description: "Advanced open-source relational database",
+        link: "https://www.postgresql.org"
+      },
+      {
+        id: "mysql",
+        name: "MySQL",
+        icon: "assets/svg/mysql_icon.svg",
+        description: "Popular open-source relational database",
+        link: "https://www.mysql.com"
+      },
+      {
+        id: "sqlite",
+        name: "SQLite",
+        icon: "assets/svg/sqlite_icon.svg",
+        description: "Lightweight disk-based database",
+        link: "https://www.sqlite.org"
+      },
+      {
+        id: "redis",
+        name: "Redis",
+        icon: "assets/svg/redis_icon.svg",
+        description: "In-memory data structure store",
+        link: "https://redis.io"
+      }
+    ]
+  },
+  {
+    id: "devops",
+    name: "DevOps & Infrastructure",
+    icon: "assets/svg/infrastructure_icon.svg",
+    description: "Development operations and infrastructure tools",
+    isCategory: true,
+    children: [
+      {
+        id: "git",
+        name: "Git",
+        icon: "assets/svg/git_social_media_icon.svg",
+        description: "Distributed version control system",
+        link: "https://git-scm.com"
+      },
+      {
+        id: "docker",
+        name: "Docker",
+        icon: "assets/svg/docker_icon.svg",
+        description: "Containerization platform",
+        link: "https://www.docker.com"
+      },
+      {
+        id: "linux",
+        name: "Linux",
+        icon: "assets/svg/linux_icon.svg",
+        description: "Operating system and administration",
+        link: "https://www.linux.org"
+      },
+      {
+        id: "github-actions",
+        name: "GitHub Actions",
+        icon: "assets/svg/github_actions_icon.svg",
+        description: "CI/CD automation platform",
+        link: "https://github.com/features/actions"
+      }
+    ]
+  },
+  {
+    id: "data-science",
+    name: "Data Science & AI",
+    icon: "assets/svg/ai_icon.svg",
+    description: "Data analysis, machine learning, and AI tools",
+    isCategory: true,
+    children: [
+      {
+        id: "data-analysis",
+        name: "Data Analysis",
+        icon: "assets/svg/data_analysis.svg",
+        description: "Extracting insights from structured and unstructured data"
+      },
+      {
+        id: "machine-learning",
+        name: "Machine Learning",
+        icon: "assets/svg/ml_icon.svg",
+        description: "Building predictive models and algorithms"
+      },
+      {
+        id: "jupyter",
+        name: "Jupyter Notebooks",
+        icon: "assets/svg/jupyter_icon.svg",
+        description: "Interactive computing environment",
+        link: "https://jupyter.org"
+      },
+      {
+        id: "matplotlib",
+        name: "Matplotlib",
+        icon: "assets/svg/matplotlib_icon.svg",
+        description: "Comprehensive plotting library",
+        link: "https://matplotlib.org"
+      }
+    ]
+  },
+  {
+    id: "web-development",
+    name: "Web Development",
+    icon: "assets/svg/web_icon.svg",
+    description: "Backend development and web technologies",
+    isCategory: true,
+    children: [
+      {
+        id: "rest-apis",
+        name: "REST APIs",
+        icon: "assets/svg/api_icon.svg",
+        description: "Designing and implementing RESTful web services"
+      },
+      {
+        id: "graphql",
+        name: "GraphQL",
+        icon: "assets/svg/graphql_icon.svg",
+        description: "Query language for APIs",
+        link: "https://graphql.org"
+      },
+      {
+        id: "websockets",
+        name: "WebSockets",
+        icon: "assets/svg/websocket_icon.svg",
+        description: "Real-time bidirectional communication"
+      }
+    ]
+  },
+  {
+    id: "tools-methodologies",
+    name: "Tools & Methodologies",
+    icon: "assets/svg/tools_icon.svg",
+    description: "Development tools and methodologies",
+    isCategory: true,
+    children: [
+      {
+        id: "agile",
+        name: "Agile/Scrum",
+        icon: "assets/svg/agile_icon.svg",
+        description: "Iterative development methodology"
+      },
+      {
+        id: "vscode",
+        name: "VS Code",
+        icon: "assets/svg/vscode_icon.svg",
+        description: "Source code editor",
+        link: "https://code.visualstudio.com"
+      },
+      {
+        id: "postman",
+        name: "Postman",
+        icon: "assets/svg/postman_icon.svg",
+        description: "API development and testing",
+        link: "https://www.postman.com"
+      }
+    ]
+  }
+];
+
+
+export const skills = [
+  {
+    name: "Python",
+    icon: "assets/svg/logo_python_icon.svg",
+  },
+  {
+    name: "django",
+    icon: "assets/svg/django_fill_icon.svg",
+  },
+  {
+    name: "Postgres",
+    icon: "assets/svg/devicon-postgresql.svg",
+  },
+  {
+    name: "Git",
+    icon: "assets/svg/git_social media_icon.svg",
+  },
+  {
+    name: "Data Analysis",
+    icon: "assets/svg/data_analysis.svg",
+  },
 ];
