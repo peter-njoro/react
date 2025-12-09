@@ -480,25 +480,12 @@ export const skillTree: SkillNode[] = [
         description: "Extracting insights from structured and unstructured data"
       },
       {
-        id: "machine-learning",
-        name: "Machine Learning",
-        icon: "assets/svg/ml_icon.svg",
-        description: "Building predictive models and algorithms"
-      },
-      {
         id: "jupyter",
         name: "Jupyter Notebooks",
         icon: "assets/svg/jupyter_icon.svg",
         description: "Interactive computing environment",
         link: "https://jupyter.org"
       },
-      {
-        id: "matplotlib",
-        name: "Matplotlib",
-        icon: "assets/svg/matplotlib_icon.svg",
-        description: "Comprehensive plotting library",
-        link: "https://matplotlib.org"
-      }
     ]
   },
   {
@@ -514,19 +501,6 @@ export const skillTree: SkillNode[] = [
         icon: "assets/svg/api_icon.svg",
         description: "Designing and implementing RESTful web services"
       },
-      {
-        id: "graphql",
-        name: "GraphQL",
-        icon: "assets/svg/graphql_icon.svg",
-        description: "Query language for APIs",
-        link: "https://graphql.org"
-      },
-      {
-        id: "websockets",
-        name: "WebSockets",
-        icon: "assets/svg/websocket_icon.svg",
-        description: "Real-time bidirectional communication"
-      }
     ]
   },
   {
@@ -549,13 +523,6 @@ export const skillTree: SkillNode[] = [
         description: "Source code editor",
         link: "https://code.visualstudio.com"
       },
-      {
-        id: "postman",
-        name: "Postman",
-        icon: "assets/svg/postman_icon.svg",
-        description: "API development and testing",
-        link: "https://www.postman.com"
-      }
     ]
   }
 ];
