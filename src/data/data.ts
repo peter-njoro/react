@@ -167,10 +167,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   {
-    id: "facetrack-lite",
+    id: "ReconRoll",
     title: "FaceTrack Lite – Facial Recognition Attendance System",
     overview:
-      "FaceTrack Lite is a lightweight facial recognition-based attendance system that automates attendance tracking using AI and computer vision. It’s designed for educational institutions and small teams.",
+      "ReconRoll is an automated attendance system that uses facial recognition technology to track who's present in a room. Think of it like the face unlock feature on your phone, but instead of unlocking a device, it automatically records attendance.",
     problem:
       "Manual attendance tracking is error-prone, time-consuming, and easy to falsify. Many existing biometric systems are costly and difficult to integrate.",
     solution:
